@@ -9,12 +9,8 @@ Which elements of the HTML do I need to target? Need to have these in variables 
   b. Display the choices using .textContent ->choices is an array so maybe another for loop? use .textContent to display again. 
 3. set a timer -> set it to count down from , e.g. 100 - maybe use count--;
   a. impelement a penalty of 10 seconds for each wrong answer - how can I do this? maybe some sort of decrementing option?
-  b. 
-
-
-
-
-
+  b. use an if statement maybe to decrement the time if the choice doesn't match the answer
+  c. use an if statement for when the time hits 0 to end the game
 
 
 
@@ -26,3 +22,19 @@ Which elements of the HTML do I need to target? Need to have these in variables 
 
 
 */
+
+var startScreen = document.getElementById('start-screen');
+var buttonClick = document.getElementById('start');
+buttonClick.addEventListener('click', function(){
+
+  console.log('here')
+})
+
+var questions = document.getElementById('questions');
+var questionTitle = document.getElementById('question-title');
+var choices = document.getElementById('choices');
+var end = document.getElementById('end-screen');
+var finalScore = document.getElementById('final-score');
+var initials = document.getElementById('initials');
+var submit = document.getElementById('submit');
+var feedback = document.getElementById('feedback');
