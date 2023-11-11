@@ -23,6 +23,8 @@ Which elements of the HTML do I need to target? Need to have these in variables 
 
 */
 
+//getting all the id's in the HTML and storing them in variables
+var timer = document.getElementById('time');
 var startScreen = document.getElementById('start-screen');
 var buttonClick = document.getElementById('start');
 buttonClick.addEventListener('click', function(){
@@ -38,3 +40,6 @@ var finalScore = document.getElementById('final-score');
 var initials = document.getElementById('initials');
 var submit = document.getElementById('submit');
 var feedback = document.getElementById('feedback');
+
+//so i want the #start button and #start-screen content to dissapear once the #start button is clicked - how do i do this? the search states use display: none -> this suggests css? how can i target the css property? maybe with the class? 
+
