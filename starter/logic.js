@@ -49,14 +49,15 @@ function startQuiz() {
   startScreen.classList.add('hide');
 
   //display the timer at 75 seconds-> use setInterval method
-  timer.textContent = timeLeft  
+ 
   timerInterval = setInterval(function() { 
     timeLeft --;
+    timer.textContent = timeLeft  
     console.log(timeLeft);
     if(timeLeft === 0) {
       clearInterval(timerInterval)
     }
-  })
+  }, 1000)
   
 }
 
