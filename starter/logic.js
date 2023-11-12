@@ -44,12 +44,20 @@ var feedback = document.getElementById('feedback');
 //so i want the #start button and #start-screen content to dissapear once the #start button is clicked - how do i do this? the search states use display: none -> this suggests css? how can i target the css property? maybe with the class? maybe a function to get the quiz started and the content disappears?
 
 function startQuiz() {
+  //remove the start button and start-screen text
   startButton.classList.add('hide');
   startScreen.classList.add('hide');
-  questions.classList.remove('hide');
 
-
-
-
+  //display the timer at 75 seconds-> use setInterval method
+    timerInterval = setInterval(function() { 
+    timeLeft --;
+    console.log(timeLeft);
+    if(timeLeft === 0) {
+      clearInterval(timerInterval)
+    }
+  })
+  
 }
 
+//how can i use the below to make the first question appear? Another function? 
+questions.classList.remove('hide');
