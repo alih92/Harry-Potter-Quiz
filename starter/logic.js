@@ -25,14 +25,17 @@ Which elements of the HTML do I need to target? Need to have these in variables 
 
 //getting all the id's in the HTML and storing them in variables
 var timer = document.getElementById('time');
+var timeLeft = 75;
+var timerInterval;
 var startScreen = document.getElementById('start-screen');
-var buttonClick = document.getElementById('start');
-buttonClick.addEventListener('click', function(){
+var startButton = document.getElementById('start');
+startButton.addEventListener('click', function(){
 
   console.log('here')
 })
 
 var questions = document.getElementById('questions');
+var questionNumber = 0;
 var questionTitle = document.getElementById('question-title');
 var choices = document.getElementById('choices');
 var end = document.getElementById('end-screen');
@@ -41,5 +44,8 @@ var initials = document.getElementById('initials');
 var submit = document.getElementById('submit');
 var feedback = document.getElementById('feedback');
 
-//so i want the #start button and #start-screen content to dissapear once the #start button is clicked - how do i do this? the search states use display: none -> this suggests css? how can i target the css property? maybe with the class? 
+//so i want the #start button and #start-screen content to dissapear once the #start button is clicked - how do i do this? the search states use display: none -> this suggests css? how can i target the css property? maybe with the class? maybe a function to get the quiz started and the content disappears?
 
+function startQuiz() {
+  startButton.setAttribute('style', )
+}
