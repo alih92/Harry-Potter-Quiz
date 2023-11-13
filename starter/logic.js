@@ -56,12 +56,12 @@ function startQuiz() {
   timerInterval = setInterval(function() { 
     timeLeft --;
     timer.textContent = timeLeft  
-    console.log(timeLeft);
     if(timeLeft === 0) {
       clearInterval(timerInterval)
     }
   }, 1000)
   
+  showQuestions(questionNumber);
 }
 
 //how can i use the below to make the first question appear? Another function? 
@@ -77,6 +77,25 @@ function showQuestions() {
   option4.textContent = questions[questionNumber].choices[3];
 }
 
-showQuestions();
+/* 1.add an eventlistener for the question. When user selects an option
+  a. if right answer selected-> display correct!
+  b. else if wrong answer selected-> display incorrect!
+
+2. move to next question -> repeat a and b above - maybe a for loop?
 
 
+
+*/
+
+choicesArray.addEventListener('click', function(e){
+  var selectedOption = e.target;
+  console.log(selectedOption);
+
+  if(selectedOption === questions[questionNumber].correctAnswer) {
+    feedback.textContent = 'Correct!';
+  } else {
+    feedback.textContent = 'Incorrect!';
+    timeLeft -= 10;
+  
+  }
+})
