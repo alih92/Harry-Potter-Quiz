@@ -33,8 +33,11 @@ startButton.addEventListener('click', startQuiz);
 
 var questionsArray = document.getElementById('questions');
 var questionNumber = 0;
-
-
+var questionTitle = document.getElementById('question-title');
+var option1 = document.getElementById('option1');
+var option2 = document.getElementById('option2');
+var option3 = document.getElementById('option3');
+var option4 = document.getElementById('option4');
 var choicesArray = document.getElementById('choices');
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
@@ -66,9 +69,14 @@ function startQuiz() {
 
 //retrieve the questions from the questions array in the questions.js
 function showQuestions() { 
-  var questionTitle = document.getElementById('question-title');
-  questionTitle.textContent = questions.question;
-
+  
+  questionTitle.textContent = questions[questionNumber].question;
+  option1.textContent = questions[questionNumber].choices[0];
+  option2.textContent = questions[questionNumber].choices[1];
+  option3.textContent = questions[questionNumber].choices[2];
+  option4.textContent = questions[questionNumber].choices[3];
 }
 
 showQuestions();
+
+
