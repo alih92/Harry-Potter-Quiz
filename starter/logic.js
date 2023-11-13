@@ -96,6 +96,8 @@ choicesArray.addEventListener('click', function(e){
   } else {
     feedback.textContent = 'Incorrect!';
     timeLeft -= 10;
+
+    feedback.classList.remove('hide');
   
   }
 })
