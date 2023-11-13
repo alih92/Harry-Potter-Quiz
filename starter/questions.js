@@ -38,5 +38,5 @@ var questions = [
     questions: "What type of Patronus appears to lead Harry to the Sword of Gryffindor?",
     choices: ["A stag", "A sea otter", "A doe", "A cat"],
     correctAnswer: "A doe"
-  }
+  },
 ];

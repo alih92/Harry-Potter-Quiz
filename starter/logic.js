@@ -31,10 +31,11 @@ var startScreen = document.getElementById('start-screen');
 var startButton = document.getElementById('start');
 startButton.addEventListener('click', startQuiz);
 
-var questions = document.getElementById('questions');
+var questionsArray = document.getElementById('questions');
 var questionNumber = 0;
-var questionTitle = document.getElementById('question-title');
-var choices = document.getElementById('choices');
+
+
+var choicesArray = document.getElementById('choices');
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
 var initials = document.getElementById('initials');
@@ -47,9 +48,8 @@ function startQuiz() {
   //remove the start button and start-screen text
   startButton.classList.add('hide');
   startScreen.classList.add('hide');
-
+  questionsArray.classList.remove('hide');
   //display the timer at 75 seconds-> use setInterval method
- 
   timerInterval = setInterval(function() { 
     timeLeft --;
     timer.textContent = timeLeft  
@@ -62,4 +62,13 @@ function startQuiz() {
 }
 
 //how can i use the below to make the first question appear? Another function? 
-questions.classList.remove('hide');
+
+
+//retrieve the questions from the questions array in the questions.js
+function showQuestions() { 
+  var questionTitle = document.getElementById('question-title');
+  questionTitle.textContent = questions.question;
+
+}
+
+showQuestions();
