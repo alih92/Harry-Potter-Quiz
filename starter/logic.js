@@ -42,6 +42,7 @@ var choicesArray = document.getElementById('choices');
 // console.log('choicesArray', choicesArray);
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
+var score = 0;
 var initials = document.getElementById('initials');
 var submit = document.getElementById('submit');
 var feedback = document.getElementById('feedback');
@@ -116,6 +117,7 @@ feedback.classList.remove('hide');
 setTimeout(() => {
   feedback.classList.add('hide');
 }, 1000);
+
     if(questionNumber < questions.length) {
       showQuestions(questionNumber)
     } else {
@@ -123,13 +125,13 @@ setTimeout(() => {
     }
   }
 
-
-
-
 function endQuiz() {
-  if(timeLeft === 0) {
-    clearInterval(timerInterval)
+    clearInterval(timerInterval);
     questionsArray.classList.add('hide');
     end.classList.remove('hide')
-  }
+
 }
+
+// function endScreen() {
+//   end.classList.hide('remove');
+// }
