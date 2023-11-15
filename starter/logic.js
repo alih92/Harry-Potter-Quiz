@@ -39,7 +39,7 @@ var option2 = document.getElementById('option2');
 var option3 = document.getElementById('option3');
 var option4 = document.getElementById('option4');
 var choicesArray = document.getElementById('choices');
-console.log('choicesArray', choicesArray);
+// console.log('choicesArray', choicesArray);
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
 var initials = document.getElementById('initials');
@@ -59,7 +59,7 @@ function startQuiz() {
     timeLeft --;
     timer.textContent = timeLeft  
     if(timeLeft === 0) {
-      clearInterval(timerInterval)
+      endQuiz()
     }
   }, 1000)
   
@@ -77,6 +77,7 @@ function showQuestions() {
   option2.textContent = questions[questionNumber].choices[1];
   option3.textContent = questions[questionNumber].choices[2];
   option4.textContent = questions[questionNumber].choices[3];
+  choicesArray.addEventListener('click', userAnswer);
 }
 
 /* 1.add an eventlistener for the question. When user selects an option
@@ -90,10 +91,9 @@ function showQuestions() {
 */
 
 
-choicesArray.addEventListener('click', function(e){
-  var selectedOption = e.target.innerText;
-  console.log('selectedOption',selectedOption);
-  document.createElement
+function userAnswer(e) {
+  var selectedOption = e.target.textContent;
+  // console.log('selectedOption',selectedOption);
   if(selectedOption === questions[questionNumber].correctAnswer) {
     // console.log('here')
     feedback.textContent = 'Correct!';
@@ -101,8 +101,23 @@ choicesArray.addEventListener('click', function(e){
   } else {
     feedback.textContent = 'Incorrect!';
     timeLeft -= 10;  
-  }
+    
+    questionNumber++;
 
-})
+    if(questionNumber < questions.length) {
+      showQuestions(questionNumber)
+    } else {
+      endQuiz()
+    }
+  }
+}
 
 feedback.classList.remove('hide');
+
+function endQuiz() {
+  if(timeLeft === 0) {
+    clearInterval(timerInterval)
+    questionsArray.classList.add('hide');
+    end.classList.remove('hide')
+  }
+}
