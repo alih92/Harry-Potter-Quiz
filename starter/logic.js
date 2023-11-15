@@ -129,6 +129,7 @@ function endQuiz() {
     clearInterval(timerInterval);
     questionsArray.classList.add('hide');
     end.classList.remove('hide')
+    finalScore.textContent = timeLeft;
 
 }
 
