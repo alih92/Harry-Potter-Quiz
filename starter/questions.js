@@ -26,17 +26,17 @@ var questions = [
   },
   {
     question: "Where does Sirius Black die?",
-    choices: ["Department of Mysteries", "Time Room", "Space Chmber", "Death Chamber"],
+    choices: ["Department of Mysteries", "Time Room", "Space Chamber", "Death Chamber"],
     correctAnswer: "Death Chamber"
   },
   {
     question: "Who is the Half-Blood Prince?",
-    choices: ["Harry Potter", "Draco Malfoy", "Tom Riddle", "Seerus Snape"],
+    choices: ["Harry Potter", "Draco Malfoy", "Tom Riddle", "Severus Snape"],
     correctAnswer: "Severus Snape"
   },
   {
-    questions: "What type of Patronus appears to lead Harry to the Sword of Gryffindor?",
+    question: "What type of Patronus appears to lead Harry to the Sword of Gryffindor?",
     choices: ["A stag", "A sea otter", "A doe", "A cat"],
     correctAnswer: "A doe"
-  },
+  }
 ];

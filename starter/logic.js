@@ -91,6 +91,7 @@ function showQuestions() {
 */
 
 
+
 function userAnswer(e) {
   var selectedOption = e.target.textContent;
   // console.log('selectedOption',selectedOption);
@@ -98,11 +99,19 @@ function userAnswer(e) {
     // console.log('here')
     feedback.textContent = 'Correct!';
     // console.log(feedback.textContent)
+    questionNumber++;
+
+    if(questionNumber < questions.length) {
+      showQuestions(questionNumber)
+  } else {
+    endQuiz()
+  }
   } else {
     feedback.textContent = 'Incorrect!';
     timeLeft -= 10;  
     
     questionNumber++;
+  }
 
     if(questionNumber < questions.length) {
       showQuestions(questionNumber)
@@ -110,7 +119,7 @@ function userAnswer(e) {
       endQuiz()
     }
   }
-}
+
 
 feedback.classList.remove('hide');
 
