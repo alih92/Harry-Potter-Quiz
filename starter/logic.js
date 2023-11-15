@@ -112,7 +112,10 @@ function userAnswer(e) {
     
     questionNumber++;
   }
-
+feedback.classList.remove('hide');
+setTimeout(() => {
+  feedback.classList.add('hide');
+}, 1000);
     if(questionNumber < questions.length) {
       showQuestions(questionNumber)
     } else {
@@ -121,7 +124,7 @@ function userAnswer(e) {
   }
 
 
-feedback.classList.remove('hide');
+
 
 function endQuiz() {
   if(timeLeft === 0) {
