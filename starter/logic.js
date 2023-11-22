@@ -12,15 +12,6 @@ Which elements of the HTML do I need to target? Need to have these in variables 
   b. use an if statement maybe to decrement the time if the choice doesn't match the answer
   c. use an if statement for when the time hits 0 to end the game
 
-
-
-
-
-
-
-
-
-
 */
 
 //getting all the id's in the HTML and storing them in variables
@@ -59,7 +50,7 @@ function startQuiz() {
   timerInterval = setInterval(function() { 
     timeLeft --;
     timer.textContent = timeLeft  
-    if(timeLeft === 0) {
+    if(timeLeft <=0) {
       endQuiz()
     }
   }, 1000)
@@ -85,13 +76,8 @@ function showQuestions() {
   a. if right answer selected-> display correct!
   b. else if wrong answer selected-> display incorrect!
 
-2. move to next question -> repeat a and b above - maybe a for loop?
-
-
-
+2. move to next question -> repeat a and b above - maybe a for loop or an if else statement?
 */
-
-
 
 function userAnswer(e) {
   var selectedOption = e.target.textContent;
@@ -133,6 +119,3 @@ function endQuiz() {
 
 }
 
-// function endScreen() {
-//   end.classList.hide('remove');
-// }
