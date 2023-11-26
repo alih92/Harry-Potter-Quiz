@@ -33,8 +33,10 @@ var choicesArray = document.getElementById('choices');
 // console.log('choicesArray', choicesArray);
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
-var score = 0;
+// var score = 0;
 var scoresOfUsers = [];
+localStorage.getItem("score")
+  scoresOfUsers = JSON.parse(localStorage.getItem("score"));
 var initials = document.getElementById('initials');
 var chosenInitials = initials.value
 var submit = document.getElementById('submit');
@@ -125,8 +127,9 @@ function endQuiz() {
       if(!initials.value) {
         initials.setAttribute('placeholder', 'Enter initials, max 3 characters');
       } else {
-        userScore = {user: initials.value, userScore: timeLeft}
+        var userScore = {user: initials.value, userScore: timeLeft}
         scoresOfUsers.push(userScore);
+        console.log(scoresOfUsers)
         localStorage.setItem('score', JSON.stringify(scoresOfUsers));
         initials.value = '';
       }
