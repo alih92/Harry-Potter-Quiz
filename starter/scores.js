@@ -9,7 +9,7 @@ var clearHighScores = document.getElementById('clear');
 
 for(var i = 0; i < highScores.length; i++) {
   var listEl = document.createElement('li');
-  listEl.textContent = highScores[i].user;
+  listEl.textContent = `${highScores[i].user} - ${highScores[i].userScore}`;
   highScoresList.appendChild(listEl);
 }
 // clear highscores when button is clicked

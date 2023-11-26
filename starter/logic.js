@@ -132,6 +132,8 @@ function endQuiz() {
         localStorage.setItem('score', JSON.stringify(scoresOfUsers));
         initials.value = '';
       }
+
+      window.location.href = "highScores.html";
     });
 
 }
