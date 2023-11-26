@@ -11,7 +11,6 @@ Which elements of the HTML do I need to target? Need to have these in variables 
   a. impelement a penalty of 10 seconds for each wrong answer - how can I do this? maybe some sort of decrementing option?
   b. use an if statement maybe to decrement the time if the choice doesn't match the answer
   c. use an if statement for when the time hits 0 to end the game
-
 */
 
 //getting all the id's in the HTML and storing them in variables
@@ -43,7 +42,6 @@ var submit = document.getElementById('submit');
 var feedback = document.getElementById('feedback');
 // feedback.textContent = '';
 
-
 //so i want the #start button and #start-screen content to dissapear once the #start button is clicked - how do i do this? the search states use display: none -> this suggests css? how can i target the css property? maybe with the class? maybe a function to get the quiz started and the content disappears?
 
 function startQuiz() {
@@ -62,9 +60,6 @@ function startQuiz() {
   
   showQuestions(questionNumber);
 }
-
-//how can i use the below to make the first question appear? Another function? 
-
 
 //retrieve the questions from the questions array in the questions.js
 function showQuestions() { 
@@ -116,6 +111,10 @@ setTimeout(() => {
     }
   }
 
+// function to end the quiz when there are no more questions or if the time has hit 0. 
+  // add a click event to the submit button with initials input
+    // direct to the highscores page when submit is clicked
+
 function endQuiz() {
     clearInterval(timerInterval);
     questionsArray.classList.add('hide');
@@ -137,5 +136,7 @@ function endQuiz() {
     });
 
 }
+
+
 
 
