@@ -5,6 +5,11 @@ var highScoresList = document.getElementById('highscores');
 var highScores = JSON.parse(localStorage.getItem('score')) || [];
 highScoresList.textContent = ''
 
+highScores.sort((a, b) => {
+  return b.userScore - a.userScore
+})
+console.log(highScores)
+
 //target the clear id
 var clearHighScores = document.getElementById('clear');
 
@@ -46,7 +51,3 @@ clearHighScores.addEventListener('click', function(e){
 // }
 // console.log(sortedHighToLow)
 
-highScores.sort((a, b) => {
-  return b.userScore - a.userScore
-})
-console.log(highScores)
