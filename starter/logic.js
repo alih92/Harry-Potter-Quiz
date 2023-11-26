@@ -34,10 +34,14 @@ var choicesArray = document.getElementById('choices');
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
 var score = 0;
+var scoresOfUsers = [];
 var initials = document.getElementById('initials');
+var chosenInitials = initials.value
 var submit = document.getElementById('submit');
+
 var feedback = document.getElementById('feedback');
 // feedback.textContent = '';
+
 
 //so i want the #start button and #start-screen content to dissapear once the #start button is clicked - how do i do this? the search states use display: none -> this suggests css? how can i target the css property? maybe with the class? maybe a function to get the quiz started and the content disappears?
 
@@ -117,5 +121,17 @@ function endQuiz() {
     end.classList.remove('hide')
     finalScore.textContent = timeLeft;
 
+    submit.addEventListener('click', function(){
+      if(!initials.value) {
+        initials.setAttribute('placeholder', 'Enter initials, max 3 characters');
+      } else {
+        userScore = {user: initials.value, userScore: timeLeft}
+        scoresOfUsers.push(userScore);
+        localStorage.setItem('score', JSON.stringify(scoresOfUsers));
+        initials.value = '';
+      }
+    });
+
 }
+
 
