@@ -29,7 +29,7 @@ var option2 = document.getElementById('option2');
 var option3 = document.getElementById('option3');
 var option4 = document.getElementById('option4');
 var choicesArray = document.getElementById('choices');
-// console.log('choicesArray', choicesArray);
+
 var end = document.getElementById('end-screen');
 var finalScore = document.getElementById('final-score');
 var scoresOfUsers = [];
@@ -83,9 +83,9 @@ function userAnswer(e) {
   var selectedOption = e.target.textContent;
   // console.log('selectedOption',selectedOption);
   if(selectedOption === questions[questionNumber].correctAnswer) {
-    // console.log('here')
+    
     feedback.textContent = 'Correct!';
-    // console.log(feedback.textContent)
+    
     questionNumber++;
 
     if(questionNumber < questions.length) {
