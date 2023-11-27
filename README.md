@@ -39,4 +39,12 @@ The languages utlizied in this code is:
 URL and Screenshots
 
 To visit the deployed page and play the quiz, visit: 
+https://alih92.github.io/Harry-Potter-Quiz/
 
+![Alt text](<Screenshot 2023-11-26 at 23.58.23.png>)
+
+![Alt text](<Screenshot 2023-11-26 at 23.58.50.png>)
+
+![Alt text](<Screenshot 2023-11-26 at 23.59.25.png>)
+
+![Alt text](<Screenshot 2023-11-26 at 23.59.54.png>)
